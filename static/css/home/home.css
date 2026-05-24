@@ -1,0 +1,108 @@
+/* -------------------------------------- */
+/* TOP FILTER BUTTONS (YouTube Style)     */
+/* -------------------------------------- */
+
+.top-section {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 10px 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.top-section::-webkit-scrollbar {
+    display: none;
+}
+
+.top-section button {
+    padding: 6px 14px;
+    margin-right: 10px;
+    background: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.top-section button:hover {
+    background: #e6e6e6;
+}
+
+.top-section button:first-child {
+    background: black;
+    color: white;
+    border-color: black;
+}
+
+/* -------------------------------------- */
+/* SCROLLABLE AREA                        */
+/* -------------------------------------- */
+
+.scrollable-area {
+    margin-top: 15px;
+    padding: 10px;
+}
+
+/* -------------------------------------- */
+/* SHORTS SECTION (Horizontal Scroll)     */
+/* -------------------------------------- */
+
+.recommended-shorts-section {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.recommended-shorts-section::-webkit-scrollbar {
+    height: 6px;
+}
+
+.recommended-shorts-section::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.recommended-shorts-section div {
+    width: 120px;
+    height: 200px;
+    background: #d9d9d9;
+    border-radius: 12px;
+    flex-shrink: 0;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    transition: 0.25s ease;
+}
+
+.recommended-shorts-section div:hover {
+    transform: scale(1.05);
+}
+
+/* -------------------------------------- */
+/* VIDEO GRID (YouTube Style)             */
+/* -------------------------------------- */
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.row div {
+    background: #e6e6e6;
+    height: 130px;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    transition: 0.25s ease;
+}
+
+.row div:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}

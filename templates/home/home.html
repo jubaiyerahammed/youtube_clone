@@ -1,0 +1,58 @@
+{% extends 'common_code/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home/home.css' %}">
+{% endblock %}
+{% block content %}
+<div class="top-section">
+    <div class="top-scroll">
+        <button>All</button>
+        <button>Music</button>
+        <button>Mixes</button>
+        <button>SVF</button>
+        <button>Live</button>
+        <button>News</button>
+        <button>Podcasts</button>
+        <button>FIFA World Cup</button>
+        <button>Finals</button>
+        <button>Stadiums</button>
+        <button>Tarawih</button>
+        <button>Religious recitation</button>
+        <button>Aviation</button>
+        <button>Cricket Batting Stroke</button>
+        <button>Lessons</button>
+        <button>Information</button>
+        <button>Animated films</button>
+        <button>Tourist destinations</button>
+        <button>Recently uploaded</button>
+        <button>Watched</button>
+        <button>New to you</button>
+    </div>
+</div>
+
+<div class="scrollable-area">
+
+    <!-- Shorts (5 items) -->
+    <div class="recommended-shorts-section row">
+        <div></div><div></div><div></div><div></div><div></div>
+    </div>
+
+    <!-- Playlist (3 items) -->
+    <div class="play-list row">
+        <div></div><div></div><div></div>
+    </div>
+
+    <!-- Other Videos (3 items) -->
+    <div class="other-videos row">
+        <div></div><div></div><div></div>
+    </div>
+
+    <!-- Subscription Videos (3 items) -->
+    <div class="subcription-videos row">
+        <div></div><div></div><div></div>
+    </div>
+
+</div>
+
+{% endblock %}
