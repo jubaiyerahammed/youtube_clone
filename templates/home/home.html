@@ -4,53 +4,199 @@
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/home/home.css' %}">
 {% endblock %}
+
 {% block content %}
+
+<!-- TOP FILTER BUTTONS -->
 <div class="top-section">
     <div class="top-scroll">
-        <button>All</button>
-        <button>Music</button>
-        <button>Mixes</button>
-        <button>SVF</button>
-        <button>Live</button>
-        <button>News</button>
-        <button>Podcasts</button>
-        <button>FIFA World Cup</button>
-        <button>Finals</button>
-        <button>Stadiums</button>
-        <button>Tarawih</button>
-        <button>Religious recitation</button>
-        <button>Aviation</button>
-        <button>Cricket Batting Stroke</button>
-        <button>Lessons</button>
-        <button>Information</button>
-        <button>Animated films</button>
-        <button>Tourist destinations</button>
-        <button>Recently uploaded</button>
-        <button>Watched</button>
-        <button>New to you</button>
+        {% for item in categories %}
+            <button>{{ item.titel }}</button>
+        {% endfor %}
     </div>
 </div>
 
 <div class="scrollable-area">
 
-    <!-- Shorts (5 items) -->
-    <div class="recommended-shorts-section row">
-        <div></div><div></div><div></div><div></div><div></div>
+    <!-- SHORTS SECTION -->
+    <div class="recommended-shorts-section">
+
+        <div class="short-card">
+            <div class="short-thumb"></div>
+            <div class="short-title">PostgreSQL </div>
+            <div class="short-views">12M views</div>
+        </div>
+
+        <div class="short-card">
+            <div class="short-thumb"></div>
+            <div class="short-title">Python</div>
+            <div class="short-views">8.4M views</div>
+        </div>
+
+        <div class="short-card">
+            <div class="short-thumb"></div>
+            <div class="short-title">Django</div>
+            <div class="short-views">5.1M views</div>
+        </div>
+
+        <div class="short-card">
+            <div class="short-thumb"></div>
+            <div class="short-title">HttpResponse </div>
+            <div class="short-views">5.1M views</div>
+        </div>
+        <div class="short-card">
+            <div class="short-thumb"></div>
+            <div class="short-title">JsonResponse</div>
+            <div class="short-views">5.1M views</div>
+        </div>
+
     </div>
 
-    <!-- Playlist (3 items) -->
-    <div class="play-list row">
-        <div></div><div></div><div></div><div></div>
-    </div>
+    <!-- VIDEO GRID -->
+    <div class="row">
 
-    <!-- Other Videos (3 items) -->
-    <div class="other-videos row">
-        <div></div><div></div><div></div><div></div>
-    </div>
+        <div class="recent-videos">
+            <div>
+                {{thumnails.2}}
+            </div>
 
-    <!-- Subscription Videos (3 items) -->
-    <div class="subcription-videos row">
-        <div></div><div></div><div></div><div></div>
+            <div class="video-card">
+                <div class="thumbnail"></div>
+
+                <div class="video-info">
+                    <div class="channel-icon"></div>
+
+                    <div class="meta">
+                        <h4 class="title">Rich Data Types</h4>
+                        <p class="channel">Jubaiyer</p>
+                        <p class="views">1.2M views • 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="thumbnail"></div>
+
+                <div class="video-info">
+                    <div class="channel-icon"></div>
+
+                    <div class="meta">
+                        <h4 class="title">Data Integrity & Reliability</h4>
+                        <p class="channel">Jubaiyer</p>
+                        <p class="views">850K views • 1 week ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="thumbnail"></div>
+
+                <div class="video-info">
+                    <div class="channel-icon"></div>
+
+                    <div class="meta">
+                        <h4 class="title">Primary key, Foreign key</h4>
+                        <p class="channel">Jubaiyer</p>
+                        <p class="views">2.3M views • 3 weeks ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="playlist">
+            <div class="video-card">
+                <div class="thumbnail"></div>
+
+                <div class="video-info">
+                    <div class="channel-icon"></div>
+
+                    <div class="meta">
+                        <h4 class="title">Web applications</h4>
+                        <p class="channel">Aminul</p>
+                        <p class="views">1.2M views • 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="thumbnail"></div>
+
+                <div class="video-info">
+                    <div class="channel-icon"></div>
+
+                    <div class="meta">
+                        <h4 class="title">Enterprise systems </h4>
+                        <p class="channel">Aminul</p>
+                        <p class="views">850K views • 1 week ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="thumbnail"></div>
+
+                <div class="video-info">
+                    <div class="channel-icon"></div>
+
+                    <div class="meta">
+                        <h4 class="title">Analytics & Data warehousing</h4>
+                        <p class="channel">Aminul</p>
+                        <p class="views">2.3M views • 3 weeks ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="subcription">
+            <div class="video-card">
+                <div class="thumbnail"></div>
+
+                <div class="video-info">
+                    <div class="channel-icon"></div>
+
+                    <div class="meta">
+                        <h4 class="title">Financial systems</h4>
+                        <p class="channel">Refadul</p>
+                        <p class="views">1.2M views • 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="thumbnail"></div>
+
+                <div class="video-info">
+                    <div class="channel-icon"></div>
+
+                    <div class="meta">
+                        <h4 class="title">Machine learning pipelines</h4>
+                        <p class="channel">Refadul</p>
+                        <p class="views">850K views • 1 week ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="thumbnail"></div>
+
+                <div class="video-info">
+                    <div class="channel-icon"></div>
+
+                    <div class="meta">
+                        <h4 class="title">Geospatial apps </h4>
+                        <p class="channel">Refadul</p>
+                        <p class="views">2.3M views • 3 weeks ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
     </div>
 
 </div>
