@@ -31,38 +31,36 @@
     
     <div class="recommended-shorts-section">
 
+        {% for s in shorts %}
         <div class="short-card">
-            <div class="short-thumb"></div>
-            <div class="short-title">PostgreSQL </div>
-            <div class="short-views">12M views</div>
-        </div>
+            
+            <div class="short-thumb">
+                <img src="{{ s.thumbnail }}" alt="{{ s.title }}">
+                <span class="duration">{{ s.duration }}</span>
+            </div>
 
-        <div class="short-card">
-            <div class="short-thumb"></div>
-            <div class="short-title">Python</div>
-            <div class="short-views">8.4M views</div>
-        </div>
+            <div class="short-title">{{ s.title }}</div>
+            <div class="short-views">{{ s.views }} views • {{ s.channel_name }}</div>
 
-        <div class="short-card">
-            <div class="short-thumb"></div>
-            <div class="short-title">Django</div>
-            <div class="short-views">5.1M views</div>
         </div>
-
-        <div class="short-card">
-            <div class="short-thumb"></div>
-            <div class="short-title">HttpResponse </div>
-            <div class="short-views">5.1M views</div>
-        </div>
-        <div class="short-card">
-            <div class="short-thumb"></div>
-            <div class="short-title">JsonResponse</div>
-            <div class="short-views">5.1M views</div>
-        </div>
+        {% endfor %}
 
     </div>
 
+
+
+
     <!-- VIDEO GRID -->
+    <div class="shorts-header">
+        <div class="shorts-logo">
+            <svg viewBox="0 0 24 24" class="shorts-svg">
+                <path fill="red" d="M10.5 2C6.36 2 3 5.36 3 9.5v5C3 18.64 6.36 22 10.5 22h3c4.14 0 7.5-3.36 7.5-7.5v-5C21 5.36 17.64 2 13.5 2h-3z"/>
+                <path fill="white" d="M10 8l6 4-6 4V8z"/>
+            </svg>
+        </div>
+        <span class="shorts-text">Recent Video</span>
+    </div>
+
     <div class="row">
 
         {% for v in videos %}

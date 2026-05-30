@@ -1,5 +1,5 @@
 Django==5.2.14
 python-dotenv==1.2.1
 psycopg2==2.9.12
-
+Pillow==12.2.0
 
