@@ -52,6 +52,37 @@
 /* -------------------------------------- */
 /* SHORTS SECTION (YouTube Shorts)        */
 /* -------------------------------------- */
+/* -------------------------------------- */
+/* -------------------------------------- */
+/* YOUTUBE SHORTS HEADER (Perfect Clone)  */
+/* -------------------------------------- */
+
+.shorts-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0 12px 5px;
+}
+
+.shorts-logo {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shorts-svg {
+    width: 32px;
+    height: 32px;
+}
+
+.shorts-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f0f0f;
+    letter-spacing: 0.3px;
+}
 
 .recommended-shorts-section {
     display: flex;

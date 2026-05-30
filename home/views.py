@@ -1,15 +1,20 @@
-from django.shortcuts import render
 from django.views import View
-# Create your views here.
+from django.shortcuts import render
 from home.models import TagTitels
-
-
+from contents.models import VideoContent
 
 class HomeView(View):
     def get(self, request):
         thumnails = ['Recent Videos', 'Playlist', 'Subcription']
-        categories = TagTitels.objects.all() 
-        return render(request, 'home/home.html', {'thumnails': thumnails, 'categories': categories})
+        categories = TagTitels.objects.all()
+        videos = VideoContent.objects.all().order_by('-created_at')
+
+        return render(request, 'home/home.html', {
+            'thumnails': thumnails,
+            'categories': categories,
+            'videos': videos
+        })
+
 
 class HomeRecommandView(View):
     def get(self, request):
