@@ -48,3 +48,11 @@ class VideoContent(models.Model):
 
     def __str__(self):
         return self.title
+
+class News(models.Model):
+    title = models.CharField(max_length=255)
+    thumbnail = models.URLField()
+    source = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+

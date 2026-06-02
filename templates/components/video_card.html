@@ -1,0 +1,19 @@
+<div class="video-card">
+
+    <div class="thumbnail">
+        <img src="{{ v.thumbnail }}" alt="{{ v.title }}" style="width:100%; height:100%; border-radius:12px;">
+    </div>
+
+    <div class="video-info">
+        <div class="channel-icon">
+            <img src="{{ v.channel.logo }}" style="width:100%; height:100%; border-radius:50%;">
+        </div>
+
+        <div class="meta">
+            <h4 class="title">{{ v.title }}</h4>
+            <p class="channel">{{ v.channel.name }}</p>
+            <p class="views">{{ v.views }} views • {{ v.created_at|timesince }} ago</p>
+        </div>
+    </div>
+
+</div>

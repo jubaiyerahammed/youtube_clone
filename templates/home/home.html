@@ -19,72 +19,29 @@
 <div class="scrollable-area">
 
     <!-- SHORTS SECTION -->
-    <div class="shorts-header">
-        <div class="shorts-logo">
-            <svg viewBox="0 0 24 24" class="shorts-svg">
-                <path fill="red" d="M10.5 2C6.36 2 3 5.36 3 9.5v5C3 18.64 6.36 22 10.5 22h3c4.14 0 7.5-3.36 7.5-7.5v-5C21 5.36 17.64 2 13.5 2h-3z"/>
-                <path fill="white" d="M10 8l6 4-6 4V8z"/>
-            </svg>
-        </div>
-        <span class="shorts-text">Shorts</span>
-    </div>
-    
+    {% include "components/section_header.html" with title="Shorts" %}
+
     <div class="recommended-shorts-section">
-
         {% for s in shorts %}
-        <div class="short-card">
-            
-            <div class="short-thumb">
-                <img src="{{ s.thumbnail }}" alt="{{ s.title }}">
-                <span class="duration">{{ s.duration }}</span>
-            </div>
-
-            <div class="short-title">{{ s.title }}</div>
-            <div class="short-views">{{ s.views }} views • {{ s.channel_name }}</div>
-
-        </div>
+            {% include "components/short_card.html" %}
         {% endfor %}
-
     </div>
-
-
 
 
     <!-- VIDEO GRID -->
-    <div class="shorts-header">
-        <div class="shorts-logo">
-            <svg viewBox="0 0 24 24" class="shorts-svg">
-                <path fill="red" d="M10.5 2C6.36 2 3 5.36 3 9.5v5C3 18.64 6.36 22 10.5 22h3c4.14 0 7.5-3.36 7.5-7.5v-5C21 5.36 17.64 2 13.5 2h-3z"/>
-                <path fill="white" d="M10 8l6 4-6 4V8z"/>
-            </svg>
-        </div>
-        <span class="shorts-text">Recent Video</span>
-    </div>
+    {% include "components/section_header.html" with title="Subscription Videos" %}
 
     <div class="row">
-
         {% for v in videos %}
-        <div class="video-card">
-
-            <div class="thumbnail">
-                <img src="{{ v.thumbnail }}" alt="{{ v.title }}" style="width:100%; height:100%; border-radius:12px;">
-            </div>
-
-            <div class="video-info">
-                <div class="channel-icon">
-                    <img src="{{ v.channel.logo }}" style="width:100%; height:100%; border-radius:50%;">
-                </div>
-
-                <div class="meta">
-                    <h4 class="title">{{ v.title }}</h4>
-                    <p class="channel">{{ v.channel.name }}</p>
-                    <p class="views">{{ v.views }} views • {{ v.created_at|timesince }} ago</p>
-                </div>
-            </div>
-
-        </div>
+            {% include "components/video_card.html" %}
         {% endfor %}
-
+    </div>
+    
+    {% include "components/section_header.html" with title="Top News" %}
+    <div class="row">
+        {% for v in news %}
+            {% include "components/video_card.html" %}
+        {% endfor %}
     </div>
 
 
