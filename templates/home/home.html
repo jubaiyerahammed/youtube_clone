@@ -1,12 +1,9 @@
 {% extends 'common_code/base.html' %}
 {% load static %}
-
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/home/home.css' %}">
 {% endblock %}
-
 {% block content %}
-
 <!-- TOP FILTER BUTTONS -->
 <div class="top-section">
     <div class="top-scroll">
@@ -15,9 +12,7 @@
         {% endfor %}
     </div>
 </div>
-
 <div class="scrollable-area">
-
     <!-- SHORTS SECTION -->
     {% include "components/section_header.html" with title="Shorts" %}
 
@@ -26,25 +21,18 @@
             {% include "components/short_card.html" %}
         {% endfor %}
     </div>
-
-
     <!-- VIDEO GRID -->
     {% include "components/section_header.html" with title="Subscription Videos" %}
-
     <div class="row">
         {% for v in videos %}
             {% include "components/video_card.html" %}
         {% endfor %}
     </div>
-    
     {% include "components/section_header.html" with title="Top News" %}
     <div class="row">
         {% for v in news %}
             {% include "components/video_card.html" %}
         {% endfor %}
     </div>
-
-
 </div>
-
 {% endblock %}

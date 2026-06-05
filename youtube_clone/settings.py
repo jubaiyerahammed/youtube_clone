@@ -11,22 +11,26 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+#pathlib হলো Python‑এর একটি built‑in module
+#যা file path (folder path, file location) handle করতে modern, clean, OS‑independent way দেয়।
+
 # from dotenv import load_dotenv
 # import os
-
 # load_dotenv()
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-TEMPLATE_DIR=BASE_DIR/'templates'
+
+BASE_DIR = Path(__file__).resolve().parent.parent   #BASE_DIR → পুরো project এর root path
+#Path() ব্যবহার করলে path clean, readable এবং OS‑independent হয়
+TEMPLATE_DIR=BASE_DIR/'templates'  #TEMPLATE_DIR → templates folder এর path
 #print(TEMPLATE_DIR)
-STATIC_DIR = BASE_DIR/'static'
+STATIC_DIR = BASE_DIR/'static'  #STATIC_DIR → static files folder এর path
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY ='django-insecure-6n%iuz68*=g=dpjqldg66yz($9$ru!4=g(_nmw+23y))sjj338'
+
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -85,9 +89,9 @@ WSGI_APPLICATION = 'youtube_clone.wsgi.application'
 DATABASES ={
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'youtube_clone_db',   # তোমার DB নাম
+        'NAME': 'youtube_clone_db',   # DB নাম
         'USER': 'postgres',           # অথবা 'jubaiyer'
-        'PASSWORD': 'jubaiyer',           # তোমার পাসওয়ার্ড
+        'PASSWORD': 'jubaiyer',           # পাসওয়ার্ড
         'HOST': 'localhost',
         'PORT': '5432',
     }
