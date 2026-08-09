@@ -1,185 +1,587 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background: #f5f5f5;
+    background: #bc9292;
+    color: #e7e1e1;
+}
+
+
+/* =========================================
+   LEFT SIDEBAR
+========================================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 240px;
+    height: 100vh;
+
+    background: #ad7ba6;
+
+    padding: 12px;
+
+    overflow-y: auto;
+
+    border-right: 1px solid #e5e5e5;
+
+    z-index: 1000;
+}
+
+
+/* YouTube Logo / Title */
+
+.sidebar h2 {
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 12px;
+
+    margin-bottom: 12px;
+
+    color: #ff0000;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* Sidebar Menu */
+
+.menu-item {
+    width: 100%;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 16px;
+
+    margin-bottom: 2px;
+
+    border-radius: 10px;
+
+    color: #0f0f0f;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: background 0.15s ease;
+}
+
+
+/* Menu Hover */
+
+.menu-item:hover {
+    background: #f2f2f2;
+}
+
+
+/* Active Menu */
+
+.menu-item.active {
+    background: #f2f2f2;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   MAIN AREA
+========================================= */
+
+.main {
+    margin-left: 240px;
+
+    min-height: 100vh;
+
+    background: #ffffff;
+}
+
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.topbar {
+    position: sticky;
+
+    top: 0;
+
+    width: 100%;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 24px;
+
+    background: #d7acd2;
+
+    border-bottom: 1px solid #e5e5e5;
+
+    z-index: 999;
+}
+
+
+/* =========================================
+   TOPBAR LEFT
+========================================= */
+
+.left {
+    width: 220px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.left h1 {
+    margin: 0;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    color: #0f0f0f;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   SEARCH CENTER
+========================================= */
+
+.center {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    min-width: 0;
+}
+
+
+/* =========================================
+   SEARCH BOX
+========================================= */
+
+.search-box {
+    width: 550px;
+    max-width: 100%;
+
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+
+    background: #ffffff;
+
+    border: 1px solid #c6c6c6;
+
+    border-radius: 22px;
+
     overflow: hidden;
 }
 
-.container {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-}
 
-/* Left Sidebar */
-.sidebar {
-    width: 10%;
-    background: linear-gradient(180deg, #cecaca, #cfccca, #91908e);
-    color: rgb(29, 4, 4);
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-}
-
-.sidebar h2 {
-    font-size: 20px;
-}
-
-.menu-item {
-    width: 90%;
-    padding: 12px;
-    text-align: center;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.15);
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.menu-item:hover {
-    background: rgba(255,255,255,0.35);
-    transform: scale(1.03);
-}
-
-/* Main Section */
-.main {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Top Navbar */
-.topbar {
-    height: 8%;
-    background: linear-gradient(90deg, #58535e, #44484f);
-    color: white;
-    display: flex;
-    align-items:center ;
-    
-    padding: 0 25px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-.left, .center, .right {
-    flex: 1;
-
-}
-.left h1 {
-    font-size: 24px;
-    margin: 0;
-    
-}
-.center{
-    display: flex;
-    justify-content: center;
-}
-.search-box{
-    position: relative;
-}
-.search-box i{
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #666;
-    font-size: 16px;
-    cursor: pointer;
-
-    background: white;
-    padding: 10px 15px;
-    border-radius: 25%;
-    width: 50px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
+/* Search Input */
 
 .search-box input {
-    padding: 10px 15px;
+    flex: 1;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0 16px;
+
     border: none;
-    border-radius: 25px;
-    width: 400px;
     outline: none;
-}
-/* Voice Button */
-.voice-btn{
-    
 
-    margin-left: 10px;
-    padding: 10px 15px;
-    border: none;
-    background: white;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    background: transparent;
+
+    color: #0f0f0f;
+
+    font-size: 15px;
 }
 
-.voice-btn i {
-    font-size: 18px;
-    color: #333;
-}
-    
 
-/* Right section icons layout */
-.right {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 20px;
+/* Placeholder */
+
+.search-box input::placeholder {
+    color: #606060;
 }
-/* Create Button */
-.create-btn {
-    background: white;
-    color: #333;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 14px;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+
+
+/* Search Focus */
+
+.search-box:focus-within {
+    border-color: #1a73e8;
+}
+
+
+/* =========================================
+   SEARCH BUTTON
+========================================= */
+
+.search-btn {
+    width: 64px;
+    height: 100%;
+
+    flex-shrink: 0;
+
     display: flex;
     align-items: center;
-    gap: 6px;
-}
+    justify-content: center;
 
-.create-btn i {
+    padding: 0;
+
+    border: none;
+    border-left: 1px solid #d3d3d3;
+
+    background: #f8f8f8;
+
+    color: #0f0f0f;
+
+    cursor: pointer;
+
     font-size: 16px;
 }
 
-/* Notification Bell */
-.notif-icon {
-    font-size: 22px;
-    cursor: pointer;
-    color: white;
+
+/* Search Hover */
+
+.search-btn:hover {
+    background: #eeeeee;
 }
 
-/* Profile Icon */
-.profile-icon {
-    font-size: 28px;
+
+/* =========================================
+   VOICE SEARCH
+========================================= */
+
+.voice-btn {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f2f2f2;
+
+    color: #0f0f0f;
+
     cursor: pointer;
-    color: white;
+
+    transition: background 0.15s ease;
 }
-/* Content Area */
+
+
+/* Voice Hover */
+
+.voice-btn:hover {
+    background: #e5e5e5;
+}
+
+
+/* Voice Icon */
+
+.voice-btn i {
+    font-size: 16px;
+}
+
+
+/* =========================================
+   TOPBAR RIGHT
+========================================= */
+
+.right {
+    width: 250px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 18px;
+}
+
+
+/* =========================================
+   CREATE BUTTON
+========================================= */
+
+.create-btn {
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 0 16px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background: #f2f2f2;
+
+    color: #0f0f0f;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: background 0.15s ease;
+}
+
+
+/* Create Hover */
+
+.create-btn:hover {
+    background: #e5e5e5;
+}
+
+
+/* Create Icon */
+
+.create-btn i {
+    font-size: 15px;
+}
+
+
+/* =========================================
+   NOTIFICATION
+========================================= */
+
+.notif-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #0f0f0f;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: background 0.15s ease;
+}
+
+
+/* Notification Hover */
+
+.notif-icon:hover {
+    background: #f2f2f2;
+}
+
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #606060;
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
 .content {
-    height: 92%;
-    background: white;
-    padding: 20px;
-    overflow-y: auto;
+    padding: 20px 24px;
+
+    min-height: calc(100vh - 64px);
+
+    background: #c3a7a7;
 }
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .search-box {
+        width: 450px;
+    }
+
+    .left {
+        width: 180px;
+    }
+
+    .right {
+        width: 220px;
+    }
+}
+
 
 @media (max-width: 900px) {
+
     .sidebar {
-        width: 20%;
+        width: 200px;
     }
 
     .main {
-        width: 80%;
+        margin-left: 200px;
     }
 
-    .search-box input {
+    .left {
         width: 150px;
     }
+
+    .left h1 {
+        font-size: 17px;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .right {
+        width: 190px;
+
+        gap: 10px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        width: 70px;
+
+        padding: 8px;
+    }
+
+    .main {
+        margin-left: 70px;
+    }
+
+    .sidebar h2 {
+        font-size: 0;
+
+        justify-content: center;
+    }
+
+    .sidebar h2::after {
+        content: "▶";
+
+        font-size: 18px;
+
+        color: #ff0000;
+    }
+
+    .menu-item {
+        justify-content: center;
+
+        padding: 0;
+    }
+
+    .left {
+        display: none;
+    }
+
+    .right {
+        width: auto;
+
+        gap: 5px;
+    }
+
+    .create-btn {
+        width: 40px;
+
+        padding: 0;
+
+        border-radius: 50%;
+    }
+
+    .create-btn {
+        font-size: 0;
+    }
+
+    .create-btn i {
+        font-size: 16px;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .voice-btn {
+        display: none;
+    }
+
+    .notif-icon {
+        display: none;
+    }
+
+    .search-btn {
+        width: 50px;
+    }
+
+    .topbar {
+        padding: 0 10px;
+    }
+}
+
+body {
+    background: red !important;
 }

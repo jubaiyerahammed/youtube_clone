@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{% static 'css/common/base.css'%}">
-    <title>YouTube Clone</title>
+    <title>YouTube clone</title>
 {% block extra_css %}{% endblock %}
 {% block title %}
 {% endblock %}
@@ -28,54 +28,92 @@
         <div class="menu-item">Library</div>
     </div>
 
+
     <!-- Main Area -->
     <div class="main">
 
         <!-- Top Bar -->
         <div class="topbar">
+
             <div class="left">
-                <h1>Youtube Clone</h1>
+                <h1></h1>
             </div>
 
+
+            <!-- Search Area -->
             <div class="center">
+
                 <div class="search-box">
-                    <i class="fa fa-search"></i>
-                    <input type="text" placeholder="Search videos...">
-                </div>
-                <div>
-                    <button class="voice-btn">
-                        <i class="fa fa-microphone"></i>
+
+                    <input
+                        type="text"
+                        placeholder="Search videos..."
+                    >
+
+                    <button
+                        type="button"
+                        class="search-btn"
+                        title="Search"
+                    >
+                        <i class="fa fa-search"></i>
                     </button>
+
                 </div>
 
-            </div>
-            <div class="right">
-                <button class="create-btn">
-                    <i class="fa fa-plus"></i> Create
+
+                <!-- Voice Search -->
+                <button
+                    type="button"
+                    class="voice-btn"
+                    title="Voice Search"
+                >
+                    <i class="fa fa-microphone"></i>
                 </button>
 
-                <i class="fa fa-bell notif-icon"></i>
+            </div>
 
-                <i class="fa fa-user-circle profile-icon"></i>
+
+            <!-- Right Area -->
+            <div class="right">
+
+                <button
+                    type="button"
+                    class="create-btn"
+                >
+                    <i class="fa fa-plus"></i>
+                    Create
+                </button>
+
+                <i
+                    class="fa fa-bell notif-icon"
+                    title="Notifications"
+                ></i>
+
+                <i
+                    class="fa fa-user-circle profile-icon"
+                    title="Profile"
+                ></i>
 
             </div>
+
         </div>
+
 
         <!-- Content Area -->
         <div class="content">
+
             {% block content %}
 
             Your page content will come here
 
-            {% endblock %} 
+            {% endblock %}
+
         </div>
 
+
     </div>
-
 </div>
-
 </body>
 </html>
-
 
 
