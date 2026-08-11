@@ -1,6 +1,6 @@
-/* =========================================
+/* =====================================================
    GLOBAL
-========================================= */
+===================================================== */
 
 * {
     margin: 0;
@@ -9,192 +9,149 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+html,
 body {
-    background: #bc9292;
-    color: #e7e1e1;
-}
-
-
-/* =========================================
-   LEFT SIDEBAR
-========================================= */
-
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 240px;
-    height: 100vh;
-
-    background: #ad7ba6;
-
-    padding: 12px;
-
-    overflow-y: auto;
-
-    border-right: 1px solid #e5e5e5;
-
-    z-index: 1000;
-}
-
-
-/* YouTube Logo / Title */
-
-.sidebar h2 {
-    height: 40px;
-
-    display: flex;
-    align-items: center;
-
-    padding: 0 12px;
-
-    margin-bottom: 12px;
-
-    color: #ff0000;
-
-    font-size: 20px;
-    font-weight: 700;
-
-    letter-spacing: -0.5px;
-}
-
-
-/* Sidebar Menu */
-
-.menu-item {
     width: 100%;
-    height: 44px;
-
-    display: flex;
-    align-items: center;
-
-    padding: 0 16px;
-
-    margin-bottom: 2px;
-
-    border-radius: 10px;
-
-    color: #0f0f0f;
-
-    font-size: 14px;
-    font-weight: 500;
-
-    cursor: pointer;
-
-    transition: background 0.15s ease;
+    min-height: 100%;
 }
 
-
-/* Menu Hover */
-
-.menu-item:hover {
-    background: #f2f2f2;
-}
-
-
-/* Active Menu */
-
-.menu-item.active {
-    background: #f2f2f2;
-
-    font-weight: 600;
-}
-
-
-/* =========================================
-   MAIN AREA
-========================================= */
-
-.main {
-    margin-left: 240px;
-
-    min-height: 100vh;
-
+body {
     background: #ffffff;
+    color: #0f0f0f;
 }
 
 
-/* =========================================
-   TOP BAR
-========================================= */
+/* =====================================================
+   TOPBAR
+===================================================== */
 
 .topbar {
+
     position: sticky;
 
     top: 0;
 
     width: 100%;
+
     height: 64px;
 
     display: flex;
+
     align-items: center;
 
-    padding: 0 24px;
+    justify-content: space-between;
 
-    background: #d7acd2;
+    padding: 0 20px;
+
+    background: #ffffff;
 
     border-bottom: 1px solid #e5e5e5;
 
-    z-index: 999;
+    z-index: 1000;
 }
 
 
-/* =========================================
+/* =====================================================
    TOPBAR LEFT
-========================================= */
+===================================================== */
 
-.left {
-    width: 220px;
-
-    flex-shrink: 0;
+.topbar-left {
 
     display: flex;
+
     align-items: center;
+
+    gap: 18px;
+
+    flex-shrink: 0;
 }
 
 
-.left h1 {
-    margin: 0;
+/* =====================================================
+   HAMBURGER
+===================================================== */
+
+.menu-toggle {
+
+    width: 40px;
+
+    height: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
 
     font-size: 20px;
 
-    font-weight: 600;
-
     color: #0f0f0f;
+}
+
+.menu-toggle:hover {
+
+    background: #f2f2f2;
+}
+
+
+/* =====================================================
+   YOUTUBE LOGO
+===================================================== */
+
+.youtube-logo {
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: #ff0000;
 
     white-space: nowrap;
 }
 
 
-/* =========================================
-   SEARCH CENTER
-========================================= */
+/* =====================================================
+   TOPBAR CENTER
+===================================================== */
 
-.center {
+.topbar-center {
+
     flex: 1;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     gap: 12px;
 
     min-width: 0;
+
+    margin: 0 30px;
 }
 
 
-/* =========================================
+/* =====================================================
    SEARCH BOX
-========================================= */
+===================================================== */
 
 .search-box {
-    width: 550px;
-    max-width: 100%;
+
+    width: min(600px, 100%);
 
     height: 42px;
 
     display: flex;
+
     align-items: center;
 
     background: #ffffff;
@@ -207,92 +164,74 @@ body {
 }
 
 
-/* Search Input */
-
 .search-box input {
+
     flex: 1;
 
     width: 100%;
+
     height: 100%;
 
     padding: 0 16px;
 
     border: none;
+
     outline: none;
 
     background: transparent;
 
-    color: #0f0f0f;
-
     font-size: 15px;
+
+    color: #0f0f0f;
 }
 
 
-/* Placeholder */
-
 .search-box input::placeholder {
+
     color: #606060;
 }
 
 
-/* Search Focus */
-
-.search-box:focus-within {
-    border-color: #1a73e8;
-}
-
-
-/* =========================================
+/* =====================================================
    SEARCH BUTTON
-========================================= */
+===================================================== */
 
 .search-btn {
-    width: 64px;
+
+    width: 60px;
+
     height: 100%;
 
-    flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 0;
-
     border: none;
+
     border-left: 1px solid #d3d3d3;
 
     background: #f8f8f8;
 
-    color: #0f0f0f;
-
     cursor: pointer;
 
     font-size: 16px;
+
+    color: #0f0f0f;
 }
 
-
-/* Search Hover */
-
 .search-btn:hover {
+
     background: #eeeeee;
 }
 
 
-/* =========================================
-   VOICE SEARCH
-========================================= */
+/* =====================================================
+   VOICE
+===================================================== */
 
 .voice-btn {
+
     width: 42px;
+
     height: 42px;
 
     flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 0;
 
     border: none;
 
@@ -300,59 +239,56 @@ body {
 
     background: #f2f2f2;
 
-    color: #0f0f0f;
-
     cursor: pointer;
 
-    transition: background 0.15s ease;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 16px;
 }
 
-
-/* Voice Hover */
-
 .voice-btn:hover {
+
     background: #e5e5e5;
 }
 
 
-/* Voice Icon */
-
-.voice-btn i {
-    font-size: 16px;
-}
-
-
-/* =========================================
+/* =====================================================
    TOPBAR RIGHT
-========================================= */
+===================================================== */
 
-.right {
-    width: 250px;
+.topbar-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
 
     flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    gap: 18px;
 }
 
 
-/* =========================================
+/* =====================================================
    CREATE BUTTON
-========================================= */
+===================================================== */
 
 .create-btn {
+
     height: 40px;
 
+    padding: 0 16px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     gap: 7px;
-
-    padding: 0 16px;
 
     border: none;
 
@@ -362,186 +298,302 @@ body {
 
     color: #0f0f0f;
 
-    font-size: 14px;
-    font-weight: 500;
-
     cursor: pointer;
 
-    transition: background 0.15s ease;
+    font-size: 14px;
 }
 
-
-/* Create Hover */
-
 .create-btn:hover {
+
     background: #e5e5e5;
 }
 
 
-/* Create Icon */
+/* =====================================================
+   ICON BUTTON
+===================================================== */
 
-.create-btn i {
-    font-size: 15px;
-}
+.icon-btn {
 
-
-/* =========================================
-   NOTIFICATION
-========================================= */
-
-.notif-icon {
     width: 40px;
+
     height: 40px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border: none;
+
+    background: transparent;
 
     border-radius: 50%;
 
-    color: #0f0f0f;
+    cursor: pointer;
 
-    font-size: 20px;
+    font-size: 19px;
+}
+
+.icon-btn:hover {
+
+    background: #f2f2f2;
+}
+
+
+/* =====================================================
+   PROFILE BUTTON
+===================================================== */
+
+.profile-wrapper {
+
+    position: relative;
+}
+
+
+.profile-button {
+
+    width: 40px;
+
+    height: 40px;
+
+    border: none;
+
+    background: transparent;
+
+    border-radius: 50%;
 
     cursor: pointer;
+}
+
+
+.profile-icon {
+
+    font-size: 30px;
+
+    color: #606060;
+}
+
+
+/* =====================================================
+   PAGE LAYOUT
+===================================================== */
+
+.page-layout {
+
+    display: flex;
+
+    width: 100%;
+
+    min-height: calc(100vh - 64px);
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar {
+
+    width: 240px;
+
+    flex-shrink: 0;
+
+    min-height: calc(100vh - 64px);
+
+    background: #ffffff;
+
+    border-right: 1px solid #e5e5e5;
+
+    padding: 12px;
+
+    transition:
+
+        width 0.25s ease,
+
+        padding 0.25s ease;
+}
+
+
+/* =====================================================
+   SIDEBAR MENU
+===================================================== */
+
+.sidebar-menu {
+
+    width: 100%;
+}
+
+
+.menu-item {
+
+    width: 100%;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 0 14px;
+
+    margin-bottom: 4px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    color: #0f0f0f;
+
+    font-size: 14px;
 
     transition: background 0.15s ease;
 }
 
 
-/* Notification Hover */
+.menu-item i {
 
-.notif-icon:hover {
+    width: 24px;
+
+    text-align: center;
+
+    font-size: 18px;
+}
+
+
+.menu-item:hover {
+
     background: #f2f2f2;
 }
 
 
-/* =========================================
-   PROFILE
-========================================= */
+.menu-item.active {
 
-.profile-icon {
-    width: 40px;
-    height: 40px;
+    background: #f2f2f2;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #606060;
-
-    font-size: 30px;
-
-    cursor: pointer;
+    font-weight: 600;
 }
 
 
-/* =========================================
+/* =====================================================
+   MAIN
+===================================================== */
+
+.main {
+
+    flex: 1;
+
+    min-width: 0;
+
+    background: #ffffff;
+}
+
+
+/* =====================================================
    CONTENT
-========================================= */
+===================================================== */
 
 .content {
-    padding: 20px 24px;
+
+    width: 100%;
 
     min-height: calc(100vh - 64px);
+
+    padding: 20px 24px;
 
     background: #c3a7a7;
 }
 
 
-/* =========================================
-   RESPONSIVE
-========================================= */
+/* =====================================================
+   COLLAPSED SIDEBAR
+===================================================== */
 
-@media (max-width: 1100px) {
+body.sidebar-collapsed .sidebar {
 
-    .search-box {
-        width: 450px;
-    }
+    width: 72px;
 
-    .left {
-        width: 180px;
-    }
-
-    .right {
-        width: 220px;
-    }
+    padding: 12px 8px;
 }
 
+
+body.sidebar-collapsed .menu-item {
+
+    justify-content: center;
+
+    padding: 0;
+
+    gap: 0;
+}
+
+
+body.sidebar-collapsed .menu-item span {
+
+    display: none;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
 @media (max-width: 900px) {
 
     .sidebar {
+
         width: 200px;
     }
 
-    .main {
-        margin-left: 200px;
+    .topbar-center {
+
+        margin: 0 15px;
     }
 
-    .left {
-        width: 150px;
-    }
-
-    .left h1 {
-        font-size: 17px;
-    }
-
-    .search-box {
-        width: 100%;
-    }
-
-    .right {
-        width: 190px;
-
-        gap: 10px;
-    }
 }
 
 
 @media (max-width: 700px) {
 
     .sidebar {
-        width: 70px;
 
-        padding: 8px;
-    }
+        width: 72px;
 
-    .main {
-        margin-left: 70px;
-    }
-
-    .sidebar h2 {
-        font-size: 0;
-
-        justify-content: center;
-    }
-
-    .sidebar h2::after {
-        content: "▶";
-
-        font-size: 18px;
-
-        color: #ff0000;
+        padding: 12px 8px;
     }
 
     .menu-item {
+
         justify-content: center;
 
         padding: 0;
+
+        gap: 0;
     }
 
-    .left {
+    .menu-item span {
+
         display: none;
     }
 
-    .right {
-        width: auto;
+    .youtube-logo {
+
+        display: none;
+    }
+
+    .topbar-left {
 
         gap: 5px;
     }
 
+    .topbar-center {
+
+        margin: 0 8px;
+    }
+
+    .create-btn span {
+
+        display: none;
+    }
+
     .create-btn {
+
         width: 40px;
 
         padding: 0;
@@ -549,39 +601,23 @@ body {
         border-radius: 50%;
     }
 
-    .create-btn {
-        font-size: 0;
-    }
-
-    .create-btn i {
-        font-size: 16px;
-    }
-
-    .search-box {
-        width: 100%;
-    }
 }
 
 
 @media (max-width: 500px) {
 
     .voice-btn {
-        display: none;
-    }
 
-    .notif-icon {
         display: none;
-    }
-
-    .search-btn {
-        width: 50px;
     }
 
     .topbar {
+
         padding: 0 10px;
     }
-}
 
-body {
-    background: red !important;
+    .content {
+
+        padding: 15px;
+    }
 }

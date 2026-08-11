@@ -2,16 +2,11 @@
 {% load static %}
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/home/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/home/category.css' %}">
 {% endblock %}
 {% block content %}
 <!-- TOP FILTER BUTTONS -->
-<div class="top-section">
-    <div class="top-scroll">
-        {% for item in categories %}
-            <button>{{ item.titel }}</button>
-        {% endfor %}
-    </div>
-</div>
+{% include "components/category.html" %}
 <div class="scrollable-area">
     <!-- SHORTS SECTION -->
     {% include "components/section_header.html" with title="Shorts" %}

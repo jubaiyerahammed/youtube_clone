@@ -1,0 +1,21 @@
+<!-- YouTube Category Section -->
+<div class="yt-categories">
+
+    <!-- Scrollable Category Container -->
+    <div class="yt-categories-scroll">
+
+        {% for item in categories %}
+
+            <!-- Category Button -->
+            <button
+                type="button"
+                class="yt-category {% if forloop.first %}active{% endif %}"
+            >
+                {{ item.title }}
+            </button>
+
+        {% endfor %}
+
+    </div>
+
+</div>
