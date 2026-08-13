@@ -1,33 +1,151 @@
 {% extends 'common_code/base.html' %}
+
 {% load static %}
+
+
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/home/home.css' %}">
-<link rel="stylesheet" href="{% static 'css/home/category.css' %}">
+
+<link
+    rel="stylesheet"
+    href="{% static 'css/home/home.css' %}"
+>
+
+<link
+    rel="stylesheet"
+    href="{% static 'css/home/category.css' %}"
+>
+
 {% endblock %}
+
+
 {% block content %}
-<!-- TOP FILTER BUTTONS -->
+
+
+<!-- =========================================
+     CATEGORY BAR
+========================================= -->
+
 {% include "components/category.html" %}
+
+
 <div class="scrollable-area">
-    <!-- SHORTS SECTION -->
+
+
+    <!-- =========================================
+         SHORTS
+    ========================================== -->
+
     {% include "components/section_header.html" with title="Shorts" %}
 
+
     <div class="recommended-shorts-section">
+
         {% for s in shorts %}
+
             {% include "components/short_card.html" %}
+
+        {% empty %}
+
+            <p>No Shorts available.</p>
+
         {% endfor %}
+
     </div>
-    <!-- VIDEO GRID -->
+
+
+
+    <!-- =========================================
+         RECENT VIDEOS
+    ========================================== -->
+
+    {% include "components/section_header.html" with title="Recent Videos" %}
+
+
+    <div class="row">
+
+        {% for v in recent_videos %}
+
+            {% include "components/video_card.html" %}
+
+        {% empty %}
+
+            <p>No recent videos available.</p>
+
+        {% endfor %}
+
+    </div>
+
+
+
+    <!-- =========================================
+         POPULAR VIDEOS
+    ========================================== -->
+
+    {% include "components/section_header.html" with title="Popular Videos" %}
+
+
+    <div class="row">
+
+        {% for v in popular_videos %}
+
+            {% include "components/video_card.html" %}
+
+        {% empty %}
+
+            <p>No popular videos available.</p>
+
+        {% endfor %}
+
+    </div>
+
+
+
+    <!-- =========================================
+         SUBSCRIPTION VIDEOS
+    ========================================== -->
+
     {% include "components/section_header.html" with title="Subscription Videos" %}
+
+
     <div class="row">
-        {% for v in videos %}
+
+        {% for v in subscription_videos %}
+
             {% include "components/video_card.html" %}
+
+        {% empty %}
+
+            <p>No subscription videos available.</p>
+
         {% endfor %}
+
     </div>
+
+
+
+    <!-- =========================================
+         TOP NEWS
+    ========================================== -->
+
     {% include "components/section_header.html" with title="Top News" %}
+
+
     <div class="row">
+
         {% for v in news %}
+
             {% include "components/video_card.html" %}
+
+        {% empty %}
+
+            <p>No news available.</p>
+
         {% endfor %}
+
     </div>
+
+
 </div>
+
+
 {% endblock %}
