@@ -9,30 +9,12 @@ from shorts.models import Short
 class HomeView(View):
 
     def get(self, request):
-
-        # ==========================================
-        # 1. CATEGORY
-        # ==========================================
-
         categories = TagTitels.objects.all()
-
-
-        # ==========================================
-        # 2. RECENT VIDEOS
-        # নতুন ভিডিও আগে
-        # ==========================================
-
         recent_videos = (
             VideoContent.objects
             .select_related('channel')
             .order_by('-created_at')[:12]
         )
-
-
-        # ==========================================
-        # 3. TRENDING VIDEOS
-        # বেশি views + নতুন ভিডিও
-        # ==========================================
 
         trending_videos = (
             VideoContent.objects
@@ -40,44 +22,21 @@ class HomeView(View):
             .order_by('-views', '-created_at')[:12]
         )
 
-
-        # ==========================================
-        # 4. POPULAR VIDEOS
-        # শুধুমাত্র views অনুযায়ী
-        # ==========================================
-
         popular_videos = (
             VideoContent.objects
             .select_related('channel')
             .order_by('-views')[:12]
         )
 
-
-        # ==========================================
-        # 5. SHORTS
-        # নতুন Shorts আগে
-        # ==========================================
-
         shorts = (
             Short.objects
             .order_by('-created_at')[:12]
         )
 
-
-        # ==========================================
-        # 6. TOP NEWS
-        # নতুন News আগে
-        # ==========================================
-
         news = (
             News.objects
             .order_by('-created_at')[:12]
         )
-
-
-        # ==========================================
-        # 7. PREMIUM VIDEOS
-        # ==========================================
 
         premium_videos = (
             VideoContent.objects
@@ -85,11 +44,6 @@ class HomeView(View):
             .filter(is_premium=True)
             .order_by('-created_at')[:12]
         )
-
-
-        # ==========================================
-        # 8. FREE VIDEOS
-        # ==========================================
 
         free_videos = (
             VideoContent.objects
