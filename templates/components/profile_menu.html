@@ -61,13 +61,14 @@
     </button>
 
 
-    <button class="profile-item">
+    <form method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
 
-        <i class="fa fa-sign-out"></i>
-
-        <span>Sign out</span>
-
-    </button>
+        <button type="submit" class="profile-item">
+            <i class="fa fa-sign-out"></i>
+            <span>Sign out</span>
+        </button>
+    </form>
 
 </div>
 
